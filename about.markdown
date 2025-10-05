@@ -1,18 +1,19 @@
 ---
-layout: page
-title: About
-permalink: /about/
+layout: default
+title: "首页"
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+## 欢迎来到我的网站！
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+这里是我的个人空间，分享技术笔记和生活感悟。
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+### 最新文章
 
+{% for post in site.posts %}
+- **[{{ post.title }}]({{ post.url }})** - {{ post.date | date: "%Y年%m月%d日" }}  
+  {{ post.excerpt | strip_html | truncatewords: 20 }}
+{% endfor %}
 
-[jekyll-organization]: https://github.com/jekyll
+---
+
+[关于我](/about) | [联系我](mailto:your-email@example.com)
